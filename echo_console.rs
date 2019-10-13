@@ -36,6 +36,8 @@ fn main() {
             let stdin = tokio_stdin_stdout::stdin(0);
             let stdout = tokio_stdin_stdout::stdout(0); // .make_sendable();
             
+            // Hey I am checking git commands of branching and 
+            // merging so ignore these comments.
             let stdin = FramedRead::new(stdin, LinesCodec::new());
             let stdout = FramedWrite::new(stdout, LinesCodec::new());
          
