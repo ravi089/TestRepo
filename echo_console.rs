@@ -33,11 +33,12 @@ fn main() {
         .for_each(move |stream| {
             println!("Accepted connection from: {}", stream.peer_addr().unwrap());
 
+            // Just adding comments for the sake of testing git
+            // commands.
             let stdin = tokio_stdin_stdout::stdin(0);
             let stdout = tokio_stdin_stdout::stdout(0); // .make_sendable();
             
-            // Hey I am checking git commands of branching and 
-            // merging so ignore these comments.
+            // Framing the socket.
             let stdin = FramedRead::new(stdin, LinesCodec::new());
             let stdout = FramedWrite::new(stdout, LinesCodec::new());
          
